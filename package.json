@@ -1,0 +1,21 @@
+{
+  "name": "gul-dokoni-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:tma": "npm run dev --workspace=@gul/tma",
+    "dev:seo": "npm run dev --workspace=@gul/seo",
+    "build:tma": "npm run build --workspace=@gul/tma",
+    "build:seo": "npm run build --workspace=@gul/seo",
+    "build": "npm run build:tma && npm run build:seo",
+    "typecheck": "npm run typecheck --workspace=@gul/shared && npm run typecheck --workspace=@gul/tma && npm run typecheck --workspace=@gul/seo",
+    "test": "npm test --workspace=@gul/shared"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

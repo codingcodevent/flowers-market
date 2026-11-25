@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fbf8f6;
+  --surface: #ffffff;
+  --surface-muted: #f4eeea;
+  --text: #1f171a;
+  --text-muted: #6c5e63;
+  --brand: #be3e5d;
+  --brand-hover: #a5314d;
+  --brand-soft: #fdeef2;
+  --leaf: #2f6f4e;
+  --leaf-soft: #eaf5ef;
+  --border: #eadfe2;
+  --tg-viewport-stable-height: 100dvh;
+}
+
+html.tg-dark {
+  --bg: var(--tg-theme-bg-color, #171316);
+  --surface: var(--tg-theme-secondary-bg-color, #221c20);
+  --surface-muted: #2c2429;
+  --text: var(--tg-theme-text-color, #f7f1f3);
+  --text-muted: var(--tg-theme-hint-color, #b8a8ae);
+  --brand: var(--tg-theme-button-color, #e05c7d);
+  --brand-hover: #ea7290;
+  --brand-soft: rgba(224, 92, 125, 0.16);
+  --leaf: #4ade80;
+  --leaf-soft: rgba(74, 222, 128, 0.14);
+  --border: #362c32;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobil ro'yxatlarda render tezligini oshirish */
+.product-card-cv {
+  content-visibility: auto;
+  contain-intrinsic-size: 235px;
+}
+
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@keyframes sheetSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-sheet-up {
+  animation: sheetSlideUp 180ms ease-out;
+}
