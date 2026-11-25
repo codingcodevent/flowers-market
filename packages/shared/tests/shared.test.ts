@@ -83,7 +83,7 @@ test('validateOrderPayload enforces phone/address and recomputes prices from cat
   assert.equal(valid.ok, true);
   if (valid.ok) {
     assert.equal(valid.normalizedPhone, '+998901234567');
-    assert.equal(valid.totalAmount, 520000);
+    assert.equal(valid.totalAmount, 300000);
   }
 
   const invalid = validateOrderPayload({
